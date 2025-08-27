@@ -6,8 +6,8 @@ Multiple ways to deploy the Iceberg Table Creator for different use cases.
 
 ### **Quick Start**
 ```bash
-git clone https://github.com/your-username/iceberg-table-creator.git
-cd iceberg-table-creator
+git clone https://github.com/rrprasan/Iceberg_Table_Creator.git
+cd Iceberg_Table_Creator
 ./install.sh
 ./run.sh
 ```
@@ -25,8 +25,8 @@ streamlit run Iceberg_Table_Creator.py
 ### **Using Docker Compose (Recommended)**
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/iceberg-table-creator.git
-cd iceberg-table-creator
+git clone https://github.com/rrprasan/Iceberg_Table_Creator.git
+cd Iceberg_Table_Creator
 
 # Make sure your credentials are in place
 ls ~/.aws/credentials

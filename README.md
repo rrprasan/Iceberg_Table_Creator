@@ -37,8 +37,8 @@ This app completely automates the complex process of setting up Iceberg tables o
 
 ### **1. Clone & Install**
 ```bash
-git clone https://github.com/your-username/iceberg-table-creator.git
-cd iceberg-table-creator
+git clone https://github.com/rrprasan/Iceberg_Table_Creator.git
+cd Iceberg_Table_Creator
 chmod +x install.sh
 ./install.sh
 ```
@@ -135,7 +135,7 @@ graph TB
 ## 📁 Project Structure
 
 ```
-iceberg-table-creator/
+Iceberg_Table_Creator/
 ├── Iceberg_Table_Creator.py    # Main Streamlit app
 ├── requirements.txt            # Python dependencies
 ├── install.sh                 # One-command installer
@@ -221,8 +221,8 @@ Great for e-commerce analytics:
 
 ### **Getting Help**
 - 📖 Check [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)
-- 🐛 [Open an issue](https://github.com/your-username/iceberg-table-creator/issues)
-- 💬 [Start a discussion](https://github.com/your-username/iceberg-table-creator/discussions)
+- 🐛 [Open an issue](https://github.com/rrprasan/Iceberg_Table_Creator/issues)
+- 💬 [Start a discussion](https://github.com/rrprasan/Iceberg_Table_Creator/discussions)
 
 ## 🤖 AI-Assisted Development
 
@@ -253,8 +253,8 @@ We love contributions! Here's how to help:
 
 ### **Development Setup**
 ```bash
-git clone https://github.com/your-username/iceberg-table-creator.git
-cd iceberg-table-creator
+git clone https://github.com/rrprasan/Iceberg_Table_Creator.git
+cd Iceberg_Table_Creator
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -281,7 +281,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=your-username/iceberg-table-creator&type=Date)](https://star-history.com/#your-username/iceberg-table-creator&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=rrprasan/Iceberg_Table_Creator&type=Date)](https://star-history.com/#rrprasan/Iceberg_Table_Creator&Date)
 
 ---
 

@@ -278,4 +278,4 @@ If you're still stuck:
 
 ---
 
-**Still need help?** [Open an issue](https://github.com/your-username/iceberg-table-creator/issues) and we'll help you out! 🚀
+**Still need help?** [Open an issue](https://github.com/rrprasan/Iceberg_Table_Creator/issues) and we'll help you out! 🚀
