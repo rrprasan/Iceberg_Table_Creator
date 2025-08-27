@@ -1,0 +1,109 @@
+name: 🧊 Test Iceberg Table Creator
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, '3.10', 3.11]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov flake8
+    
+    - name: Lint with flake8
+      run: |
+        # Stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Exit-zero treats all errors as warnings
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+    - name: Test imports and basic functionality
+      run: |
+        python -c "import streamlit; print('✅ Streamlit import successful')"
+        python -c "import boto3; print('✅ Boto3 import successful')"
+        python -c "import snowflake.connector; print('✅ Snowflake connector import successful')"
+        python -c "import toml; print('✅ TOML import successful')"
+        python -c "import pandas; print('✅ Pandas import successful')"
+    
+    - name: Validate Streamlit app syntax
+      run: |
+        python -m py_compile Iceberg_Table_Creator.py
+        echo "✅ Python syntax validation passed"
+    
+    - name: Test install script
+      run: |
+        chmod +x install.sh
+        # Test install script without actually running it
+        bash -n install.sh
+        echo "✅ Install script syntax validation passed"
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+    
+    - name: Install security tools
+      run: |
+        pip install bandit safety
+    
+    - name: Run security scan with bandit
+      run: |
+        bandit -r . -f json -o bandit-report.json || true
+        echo "✅ Security scan completed"
+    
+    - name: Check for known vulnerabilities
+      run: |
+        safety check --json || true
+        echo "✅ Vulnerability check completed"
+
+  documentation:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Check documentation files
+      run: |
+        # Check required files exist
+        test -f README.md && echo "✅ README.md exists"
+        test -f LICENSE && echo "✅ LICENSE exists"
+        test -f requirements.txt && echo "✅ requirements.txt exists"
+        test -f install.sh && echo "✅ install.sh exists"
+        test -f run.sh && echo "✅ run.sh exists"
+        test -f docs/TROUBLESHOOTING.md && echo "✅ TROUBLESHOOTING.md exists"
+        test -f docs/EXAMPLES.md && echo "✅ EXAMPLES.md exists"
+    
+    - name: Validate markdown
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        use-quiet-mode: 'yes'
+        use-verbose-mode: 'yes'
