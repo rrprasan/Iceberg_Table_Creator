@@ -289,11 +289,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 *Transform your data infrastructure setup from hours of frustration to minutes of pure joy!* ✨
 
-## 📞 Support
-
-- 📧 Email: your-email@example.com
-- 🐦 Twitter: [@your-twitter](https://twitter.com/your-twitter)
-- 💼 LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-linkedin)
+## 📞 Contact
+- 💼 LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/prasannarajagopal/)
 
 ---
 
