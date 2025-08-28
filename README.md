@@ -279,10 +279,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **AWS** for reliable cloud infrastructure
 - **Apache Iceberg** for the open table format
 
-## 🌟 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=rrprasan/Iceberg_Table_Creator&type=Date)](https://star-history.com/#rrprasan/Iceberg_Table_Creator&Date)
-
 ---
 
 **Made with ❤️ for the data community**
